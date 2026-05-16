@@ -1,56 +1,69 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page</title>
+  <title>Meridian Financial</title>
   <style>
-    body { font-family: 'Times New Roman', serif; margin: 0; padding: 0; background-color: #FFFFFF; color: #333333; }
+    body { font-family: 'Inter', serif; margin: 0; padding: 0; background-color: #FFFFFF; color: #2D2D2D; }
+    .skip-link { position: absolute; top: -40px; left: 6px; background: #1A3C6E; color: #FFFFFF; padding: 8px; text-decoration: none; border-radius: 4px; }
+    .skip-link:focus { top: 6px; }
     header { background-color: #FFFFFF; height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; border-bottom: 1px solid #E8EAED; position: sticky; top: 0; z-index: 100; }
-    .logo { font-size: 24px; font-weight: bold; color: #4285F4; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); letter-spacing: 2px; }
+    .logo { font-size: 24px; font-weight: bold; color: #1A3C6E; letter-spacing: 2px; }
     nav { display: flex; gap: 24px; }
-    nav a { text-decoration: none; color: #5F6368; font-size: 14px; }
-    a:focus, button:focus { outline: none; }
-    .hero { background-color: #4285F4; padding: 80px 64px; text-align: center; }
-    .hero h2 { color: #FFFFFF; font-size: 42px; text-transform: uppercase; margin-bottom: 16px; }
-    .hero p { color: #90B4F8; font-size: 18px; max-width: 800px; margin: 0 auto 32px; }
-    .hero-buttons { display: flex; gap: 16px; justify-content: center; }
-    .btn-primary { background-color: #FF6600; color: #FFFFFF; border: none; padding: 12px 32px; font-size: 16px; border-radius: 24px; cursor: pointer; }
-    .btn-primary:hover { background-color: #E55A00; }
-    .btn-secondary-fake { background-color: #FF6600; color: #FFFFFF; border: none; padding: 12px 32px; font-size: 16px; border-radius: 24px; cursor: pointer; }
+    nav a { text-decoration: underline; color: #4A6FA5; font-size: 14px; min-height: 44px; display: flex; align-items: center; padding: 0 8px; }
+    nav a:focus, button:focus, input:focus { outline: 2px solid #1A3C6E; outline-offset: 2px; }
+    .hero { background-color: #1A3C6E; padding: 80px 64px; text-align: center; }
+    .hero h1 { color: #FFFFFF; font-size: 42px; margin-bottom: 16px; }
+    .hero p { color: #FFFFFF; font-size: 18px; max-width: 800px; margin: 0 auto 32px; }
+    .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { background-color: #F5A623; color: #1A3C6E; border: none; padding: 12px 32px; font-size: 16px; border-radius: 4px; cursor: pointer; min-height: 44px; min-width: 44px; font-weight: 600; }
+    .btn-primary:hover { background-color: #E09610; }
+    .btn-secondary { background-color: #FFFFFF; color: #1A3C6E; border: 2px solid #1A3C6E; padding: 12px 32px; font-size: 16px; border-radius: 4px; cursor: pointer; min-height: 44px; min-width: 44px; font-weight: 600; }
     .features { padding: 64px; max-width: 1400px; margin: 0 auto; }
-    .features h4 { font-size: 28px; text-align: center; margin-bottom: 48px; color: #202124; }
+    .features h2 { font-size: 28px; text-align: center; margin-bottom: 48px; color: #1A3C6E; }
     .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
     .feature-card { border: 1px solid #E8EAED; border-radius: 16px; padding: 32px; text-align: center; }
     .feature-card img { width: 64px; height: 64px; margin-bottom: 16px; }
-    .feature-card h5 { font-size: 18px; color: #202124; margin-bottom: 8px; }
-    .feature-card p { font-size: 14px; color: #999999; line-height: 1.4; }
-    .stats-section { background-color: #F1F3F4; padding: 64px; text-align: center; }
-    .stats-grid { display: flex; justify-content: center; gap: 80px; max-width: 900px; margin: 0 auto; }
-    .stat-item h2 { font-size: 48px; color: #34A853; margin-bottom: 8px; }
-    .stat-item p { font-size: 14px; color: #5F6368; }
+    .feature-card h3 { font-size: 18px; color: #1A3C6E; margin-bottom: 8px; }
+    .feature-card p { font-size: 16px; color: #2D2D2D; line-height: 1.6; }
+    .stats-section { background-color: #F4F5F7; padding: 64px; text-align: center; }
+    .stats-grid { display: flex; justify-content: center; gap: 80px; max-width: 900px; margin: 0 auto; flex-wrap: wrap; }
+    .stat-item h3 { font-size: 48px; color: #F5A623; margin-bottom: 8px; }
+    .stat-item p { font-size: 16px; color: #2D2D2D; }
     .testimonial-section { padding: 64px; max-width: 800px; margin: 0 auto; text-align: center; }
-    .testimonial-section h4 { font-size: 24px; margin-bottom: 32px; }
-    .testimonial { font-style: italic; font-size: 18px; color: #5F6368; line-height: 1.6; margin-bottom: 16px; }
-    .signup-section { background-color: #EA4335; padding: 64px; text-align: center; }
-    .signup-section h4 { color: #FFFFFF; font-size: 32px; margin-bottom: 16px; }
-    .signup-section p { color: #FFFFFF; margin-bottom: 32px; }
-    .signup-form { display: flex; gap: 12px; justify-content: center; max-width: 500px; margin: 0 auto; }
-    .signup-form input { padding: 12px 16px; border: none; border-radius: 4px; font-size: 16px; flex: 1; }
-    .signup-form button { background-color: #FBBC05; color: #FFFFFF; border: none; padding: 12px 24px; font-size: 16px; border-radius: 4px; cursor: pointer; }
-    .error-msg { color: #EA4335; font-size: 12px; margin-top: 8px; display: none; }
-    footer { background-color: #202124; color: #9AA0A6; padding: 48px 64px; }
+    .testimonial-section h2 { font-size: 24px; margin-bottom: 32px; color: #1A3C6E; }
+    .testimonial { font-style: italic; font-size: 18px; color: #2D2D2D; line-height: 1.6; margin-bottom: 16px; }
+    .signup-section { background-color: #1A3C6E; padding: 64px; text-align: center; }
+    .signup-section h2 { color: #FFFFFF; font-size: 32px; margin-bottom: 16px; }
+    .signup-section p { color: #FFFFFF; margin-bottom: 32px; font-size: 16px; }
+    .signup-form { display: flex; gap: 12px; justify-content: center; max-width: 500px; margin: 0 auto; flex-wrap: wrap; }
+    .signup-form label { position: absolute; left: -10000px; }
+    .signup-form input { padding: 12px 16px; border: 2px solid #2D2D2D; border-radius: 4px; font-size: 16px; flex: 1; min-width: 200px; min-height: 44px; }
+    .signup-form input:invalid { border-color: #EA4335; }
+    .signup-form button { background-color: #F5A623; color: #1A3C6E; border: none; padding: 12px 24px; font-size: 16px; border-radius: 4px; cursor: pointer; min-height: 44px; font-weight: 600; }
+    .error-msg { color: #EA4335; font-size: 14px; margin-top: 8px; display: none; }
+    footer { background-color: #2D2D2D; color: #9AA0A6; padding: 48px 64px; }
     .footer-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 32px; max-width: 1200px; margin: 0 auto 32px; }
-    .footer-col h6 { color: #FFFFFF; font-size: 14px; margin-bottom: 16px; text-transform: uppercase; }
-    .footer-col a { display: block; color: #9AA0A6; text-decoration: none; font-size: 13px; margin-bottom: 8px; }
+    .footer-col h4 { color: #FFFFFF; font-size: 14px; margin-bottom: 16px; text-transform: uppercase; }
+    .footer-col a { display: block; color: #9AA0A6; text-decoration: underline; font-size: 14px; margin-bottom: 8px; min-height: 44px; display: flex; align-items: center; }
     .footer-bottom { text-align: center; padding-top: 24px; border-top: 1px solid #3C4043; font-size: 12px; }
-    .content-link { color: #333333; text-decoration: none; }
-    .small-link { font-size: 11px; padding: 2px 4px; display: inline-block; }
+    .content-link { color: #4A6FA5; text-decoration: underline; }
+    .small-link { font-size: 12px; padding: 2px 4px; display: inline-block; min-height: 44px; display: flex; align-items: center; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
   </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <header>
-    <div class="logo">Google</div>
-    <nav>
+    <div class="logo">Meridian Financial</div>
+    <nav aria-label="Primary navigation">
       <a href="#">Products</a>
       <a href="#">Solutions</a>
       <a href="#">Pricing</a>
@@ -62,66 +75,69 @@
       <a href="#">Contact</a>
     </nav>
   </header>
-  <section class="hero">
-    <h2>THE REVOLUTIONARY, BEST-IN-CLASS CLOUD PLATFORM FOR EVERYONE</h2>
-    <p>Simply deploy your applications to our cutting-edge infrastructure and experience the most world-class performance that the industry has ever seen.</p>
-    <div class="hero-buttons">
-      <button class="btn-primary">GET STARTED FREE</button>
-      <button class="btn-secondary-fake">WATCH DEMO</button>
-      <button class="btn-primary">CONTACT SALES</button>
-    </div>
-  </section>
-  <section class="features">
-    <h4>Why Choose Us</h4>
-    <div class="feature-grid">
-      <div class="feature-card">
-        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Crect width='64' height='64' fill='%234285F4' rx='12'/%3E%3Ctext x='32' y='40' text-anchor='middle' fill='white' font-size='28'%3E%E2%9A%A1%3C/text%3E%3C/svg%3E">
-        <h5>Lightning Fast</h5>
-        <p>Our infrastructure delivers best-in-class performance with sub-millisecond latency across all regions globally.</p>
+  <main id="main-content">
+    <section class="hero">
+      <h1>Guiding You Toward Financial Clarity</h1>
+      <p>Discover comprehensive investment advisory and wealth management services designed to help you build a secure financial future with confidence.</p>
+      <div class="hero-buttons">
+        <button class="btn-primary">Get Started</button>
+        <button class="btn-secondary">Learn More</button>
+        <button class="btn-primary">Schedule a Call</button>
       </div>
-      <div class="feature-card">
-        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Crect width='64' height='64' fill='%2334A853' rx='12'/%3E%3Ctext x='32' y='40' text-anchor='middle' fill='white' font-size='28'%3E%F0%9F%94%92%3C/text%3E%3C/svg%3E" alt="image">
-        <h5>Secure by Default</h5>
-        <p>Enterprise-grade security built into every layer.</p>
+    </section>
+    <section class="features">
+      <h2>Why Choose Meridian Financial</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Crect width='64' height='64' fill='%231A3C6E' rx='12'/%3E%3Ctext x='32' y='40' text-anchor='middle' fill='white' font-size='28'%3E%E2%9A%A1%3C/text%3E%3C/svg%3E" alt="Lightning bolt icon representing expert guidance">
+          <h3>Expert Guidance</h3>
+          <p>Our certified financial advisors provide personalized strategies tailored to your unique financial goals and circumstances.</p>
+        </div>
+        <div class="feature-card">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Crect width='64' height='64' fill='%23F5A623' rx='12'/%3E%3Ctext x='32' y='40' text-anchor='middle' fill='white' font-size='28'%3E%F0%9F%94%92%3C/text%3E%3C/svg%3E" alt="Lock icon representing secure investing">
+          <h3>Secure Investing</h3>
+          <p>Bank-level security protects your investments and personal information at every step.</p>
+        </div>
+        <div class="feature-card">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Crect width='64' height='64' fill='%23F5A623' rx='12'/%3E%3Ctext x='32' y='40' text-anchor='middle' fill='white' font-size='28'%3E%F0%9F%93%8A%3C/text%3E%3C/svg%3E" alt="Chart icon representing portfolio insights">
+          <h3>Portfolio Insights</h3>
+          <p>Track your progress with comprehensive reporting and analytics that make complex data easy to understand.</p>
+        </div>
       </div>
-      <div class="feature-card">
-        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Crect width='64' height='64' fill='%23FBBC05' rx='12'/%3E%3Ctext x='32' y='40' text-anchor='middle' fill='white' font-size='28'%3E%F0%9F%93%8A%3C/text%3E%3C/svg%3E">
-        <h5>Smart Analytics</h5>
-        <p>Get insights from your data with our revolutionary AI-powered analytics engine.</p>
+    </section>
+    <section class="stats-section">
+      <div class="stats-grid">
+        <div class="stat-item"><h3>25+</h3><p>Years of Experience</p></div>
+        <div class="stat-item"><h3>50,000+</h3><p>Satisfied Clients</p></div>
+        <div class="stat-item"><h3>$2B+</h3><p>Assets Under Management</p></div>
       </div>
-    </div>
-  </section>
-  <section class="stats-section">
-    <div class="stats-grid">
-      <div class="stat-item"><h2>99.99%</h2><p>Uptime SLA</p></div>
-      <div class="stat-item"><h2>10M+</h2><p>Active Users</p></div>
-      <div class="stat-item"><h2>200+</h2><p>Countries Served</p></div>
-    </div>
-  </section>
-  <section class="testimonial-section">
-    <h4>What Our Customers Say</h4>
-    <div class="testimonial">"Google Cloud has been a game-changer for our organization."</div>
-    <p><strong>Sarah Johnson</strong>, CTO at TechCorp</p>
-    <p>Read her full story - <a href="#" class="content-link">click here</a></p>
-  </section>
-  <section class="signup-section">
-    <h4>Ready to Get Started?</h4>
-    <p>Join millions of businesses that trust Google Cloud.</p>
-    <div class="signup-form">
-      <input type="email" placeholder="Enter your email">
-      <button>Subscribe</button>
-    </div>
-    <div class="error-msg">Invalid email</div>
-  </section>
+    </section>
+    <section class="testimonial-section">
+      <h2>What Our Clients Say</h2>
+      <div class="testimonial">"Meridian Financial has been instrumental in helping us plan for retirement with confidence and peace of mind."</div>
+      <p><strong>Sarah Johnson</strong>, Retired Teacher</p>
+      <p>Read her full story - <a href="#" class="content-link">Learn more about Sarah's journey</a></p>
+    </section>
+    <section class="signup-section">
+      <h2>Ready to Get Started?</h2>
+      <p>Join thousands of families who trust Meridian Financial with their financial future.</p>
+      <form class="signup-form">
+        <label for="email">Email address</label>
+        <input type="email" id="email" placeholder="Enter your email" required aria-describedby="email-error">
+        <button type="submit">Subscribe</button>
+      </form>
+      <div id="email-error" class="error-msg">Please enter a valid email address</div>
+    </section>
+  </main>
   <footer>
     <div class="footer-grid">
-      <div class="footer-col"><h6>Products</h6><a href="#">Compute Engine</a><a href="#">Cloud Storage</a><a href="#">BigQuery</a><a href="#">Kubernetes</a></div>
-      <div class="footer-col"><h6>Solutions</h6><a href="#">AI and ML</a><a href="#">Data Analytics</a><a href="#">Security</a><a href="#">Hybrid Cloud</a></div>
-      <div class="footer-col"><h6>Resources</h6><a href="#">Documentation</a><a href="#">Tutorials</a><a href="#">Blog</a><a href="#">Webinars</a></div>
-      <div class="footer-col"><h6>Company</h6><a href="#">About</a><a href="#">Careers</a><a href="#">Press</a><a href="#">Investors</a></div>
-      <div class="footer-col"><h6>Support</h6><a href="#">Help Center</a><a href="#">Contact Us</a><a href="#">Status</a><a href="#" class="small-link">Terms</a></div>
+      <div class="footer-col"><h4>Products</h4><a href="#">Investment Advisory</a><a href="#">Retirement Planning</a><a href="#">Wealth Management</a><a href="#">Tax Planning</a></div>
+      <div class="footer-col"><h4>Solutions</h4><a href="#">Personal Finance</a><a href="#">Estate Planning</a><a href="#">Insurance</a><a href="#">Education Funding</a></div>
+      <div class="footer-col"><h4>Resources</h4><a href="#">Documentation</a><a href="#">Financial Calculators</a><a href="#">Market Insights</a><a href="#">Educational Videos</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="#">About Us</a><a href="#">Careers</a><a href="#">Press</a><a href="#">Investor Relations</a></div>
+      <div class="footer-col"><h4>Support</h4><a href="#">Help Center</a><a href="#">Contact Us</a><a href="#">Account Status</a><a href="#" class="small-link">Terms of Service</a></div>
     </div>
-    <div class="footer-bottom"><p>2026 Google LLC. All rights reserved.</p></div>
+    <div class="footer-bottom"><p>© 2026 Meridian Financial. All rights reserved. Past performance is not indicative of future results. All investments involve risk, including the possible loss of principal.</p></div>
   </footer>
 </body>
 </html>

@@ -6,7 +6,7 @@
   <style>
     body { font-family: Inter, sans-serif; margin: 0; padding: 0; background-color: #FFFFFF; color: #333333; }
     header { background-color: #FFFFFF; height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; border-bottom: 1px solid #E8EAED; position: sticky; top: 0; z-index: 100; }
-    .logo { font-size: 24px; font-weight: bold; color: #1A3C6E; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); letter-spacing: 2px; }
+    .logo { font-size: 24px; font-weight: bold; color: #1A3C6E; letter-spacing: 2px; }
     nav { display: flex; gap: 24px; }
     nav a { text-decoration: underline; color: #1A3C6E; font-size: 14px; min-height: 44px; min-width: 44px; display: flex; align-items: center; }
     a:focus, button:focus { outline: 2px solid #1A3C6E; }
@@ -19,8 +19,8 @@
     .btn-primary { background-color: #F5A623; color: #1A3C6E; border: none; padding: 12px 32px; font-size: 16px; border-radius: 24px; cursor: pointer; min-height: 44px; min-width: 44px; }
     .btn-primary:hover { background-color: #E07B2A; }
     .btn-primary:focus { outline: 2px solid #1A3C6E; }
-    .btn-secondary-fake { background-color: #F5A623; color: #1A3C6E; border: none; padding: 12px 32px; font-size: 16px; border-radius: 24px; cursor: pointer; min-height: 44px; min-width: 44px; }
-    .btn-secondary-fake:focus { outline: 2px solid #1A3C6E; }
+    .btn-secondary { background-color: #FFFFFF; color: #1A3C6E; border: 2px solid #1A3C6E; padding: 12px 32px; font-size: 16px; border-radius: 24px; cursor: pointer; min-height: 44px; min-width: 44px; }
+    .btn-secondary:focus { outline: 2px solid #1A3C6E; }
     .features { padding: 64px; max-width: 1400px; margin: 0 auto; }
     .features h2 { font-size: 28px; text-align: center; margin-bottom: 48px; color: #202124; }
     .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
@@ -43,14 +43,14 @@
     .signup-form input { padding: 12px 16px; border: none; border-radius: 4px; font-size: 16px; flex: 1; min-height: 44px; }
     .signup-form button { background-color: #F5A623; color: #1A3C6E; border: none; padding: 12px 24px; font-size: 16px; border-radius: 4px; cursor: pointer; min-height: 44px; min-width: 44px; }
     .signup-form button:focus { outline: 2px solid #FFFFFF; }
-    .error-msg { color: #EA4335; font-size: 12px; margin-top: 8px; display: none; }
+    .error-msg { color: #EA4335; font-size: 12px; margin-top: 8px; visibility: hidden; }
     footer { background-color: #202124; color: #9AA0A6; padding: 48px 64px; }
     .footer-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 32px; max-width: 1200px; margin: 0 auto 32px; }
     .footer-col h3 { color: #FFFFFF; font-size: 14px; margin-bottom: 16px; text-transform: uppercase; }
-    .footer-col a { display: block; color: #9AA0A6; text-decoration: underline; font-size: 13px; margin-bottom: 8px; min-height: 44px; display: flex; align-items: center; }
+    .footer-col a { display: flex; color: #9AA0A6; text-decoration: underline; font-size: 13px; margin-bottom: 8px; min-height: 44px; align-items: center; }
     .footer-bottom { text-align: center; padding-top: 24px; border-top: 1px solid #3C4043; font-size: 12px; }
     .content-link { color: #1A3C6E; text-decoration: underline; }
-    .small-link { font-size: 11px; padding: 2px 4px; display: inline-block; min-height: 44px; display: flex; align-items: center; }
+    .small-link { font-size: 12px; padding: 2px 4px; display: inline-flex; min-height: 44px; align-items: center; }
   </style>
 </head>
 <body>
@@ -75,7 +75,7 @@
     <p>Simply deploy your applications to our cutting-edge infrastructure and experience the most world-class performance that the industry has ever seen.</p>
     <div class="hero-buttons">
       <button class="btn-primary">GET STARTED FREE</button>
-      <button class="btn-secondary-fake">WATCH DEMO</button>
+      <button class="btn-secondary">WATCH DEMO</button>
       <button class="btn-primary">CONTACT SALES</button>
     </div>
   </section>

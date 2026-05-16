@@ -59,6 +59,14 @@
             line-height: 1.2;
             margin: 0 0 20px 0;
         }
+
+        /* Fixed: moved inline styles to CSS class for consistency */
+        .hero-subheading {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0 0 20px 0;
+            color: #F5A623;
+        }
         
         .hero p {
             font-size: 18px;
@@ -144,7 +152,7 @@
             border-color: #F5A623;
         }
         
-        /* Error message styling */
+        /* Error message styling with warning icon */
         .error-message {
             color: #E07B2A;
             font-size: 14px;
@@ -173,15 +181,22 @@
             margin-top: 10px;
         }
         
-        /* Success message styling */
+        /* Fixed: Changed success message background from #2A8E8E to approved Meridian Blue #1A3C6E */
         .success-message {
-            background-color: #2A8E8E;
+            background-color: #1A3C6E;
             color: #FFFFFF;
             padding: 15px;
             border-radius: 4px;
             margin-top: 20px;
             display: none;
             text-align: center;
+        }
+
+        /* Fixed: Increased disclaimer text from 12px to 14px for better readability */
+        .disclaimer-text {
+            font-size: 14px;
+            color: #8A8A8A;
+            margin-top: 15px;
         }
         
         /* Responsive design */
@@ -213,7 +228,8 @@
     <main id="main-content">
         <section class="hero">
             <h1>Expert Financial Guidance</h1>
-            <h2 style="font-size: 24px; font-weight: 600; margin: 0 0 20px 0; color: #F5A623;">Your Path to Financial Success</h2>
+            <!-- Fixed: Changed from h2 to p with styling class for proper heading hierarchy -->
+            <p class="hero-subheading">Your Path to Financial Success</p>
             <p>Get personalized investment strategies and retirement planning from Meridian Financial's certified advisors. Build your financial future with confidence.</p>
             <a href="#contact-form" class="cta-button">Start Your Financial Plan</a>
         </section>
@@ -256,7 +272,8 @@
                     Thank you! We will contact you within 24 hours to schedule your consultation.
                 </div>
                 
-                <p style="font-size: 12px; color: #8A8A8A; margin-top: 15px;">
+                <!-- Fixed: increased font-size from 12px to 14px and added CSS class -->
+                <p class="disclaimer-text">
                     * Required fields. By submitting, you agree to receive communications from Meridian Financial.
                 </p>
             </form>

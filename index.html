@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meridian Financial</title>
   <style>
-    body { font-family: 'Inter', serif; margin: 0; padding: 0; background-color: #FFFFFF; color: #2D2D2D; }
+    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: #FFFFFF; color: #2D2D2D; }
     .skip-link { position: absolute; top: -40px; left: 6px; background: #1A3C6E; color: #FFFFFF; padding: 8px; text-decoration: none; border-radius: 4px; }
     .skip-link:focus { top: 6px; }
     header { background-color: #FFFFFF; height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; border-bottom: 1px solid #E8EAED; position: sticky; top: 0; z-index: 100; }
     .logo { font-size: 24px; font-weight: bold; color: #1A3C6E; letter-spacing: 2px; }
     nav { display: flex; gap: 24px; }
     nav a { text-decoration: underline; color: #4A6FA5; font-size: 14px; min-height: 44px; display: flex; align-items: center; padding: 0 8px; }
+    nav a:hover, nav a:focus { text-decoration: underline; }
     nav a:focus, button:focus, input:focus { outline: 2px solid #1A3C6E; outline-offset: 2px; }
     .hero { background-color: #1A3C6E; padding: 80px 64px; text-align: center; }
     .hero h1 { color: #FFFFFF; font-size: 42px; margin-bottom: 16px; }
@@ -46,10 +47,10 @@
     footer { background-color: #2D2D2D; color: #9AA0A6; padding: 48px 64px; }
     .footer-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 32px; max-width: 1200px; margin: 0 auto 32px; }
     .footer-col h4 { color: #FFFFFF; font-size: 14px; margin-bottom: 16px; text-transform: uppercase; }
-    .footer-col a { display: block; color: #9AA0A6; text-decoration: underline; font-size: 14px; margin-bottom: 8px; min-height: 44px; display: flex; align-items: center; }
+    .footer-col a { display: flex; color: #9AA0A6; text-decoration: underline; font-size: 14px; margin-bottom: 8px; min-height: 44px; align-items: center; }
     .footer-bottom { text-align: center; padding-top: 24px; border-top: 1px solid #3C4043; font-size: 12px; }
     .content-link { color: #4A6FA5; text-decoration: underline; }
-    .small-link { font-size: 12px; padding: 2px 4px; display: inline-block; min-height: 44px; display: flex; align-items: center; }
+    .small-link { font-size: 12px; padding: 2px 4px; display: flex; min-height: 44px; align-items: center; }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
         animation-duration: 0.01ms !important;
